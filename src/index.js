@@ -10,16 +10,22 @@ console.log(namesList);
 
 
 //- Have an output that sorts the names alphabetically
-const alphabeticalNames = namesList.sort()
-console.log("sortedLastNames: " , alphabeticalNames);
-
-let positionOfMyLastName = 0;
+const sortedLastNames = namesList.sort()
+console.log("sortedLastNames: " , sortedLastNames);
 
 //- Have an output that tells you what is the position of your name in the sorted array
+let positionOfMyLastName = null;
 
-for (let i = 0; i < namesList.length; i++) {
-        console.log("your name " + namesList[i] + " is in the position", [i]);
+for (let i = 0; i < sortedLastNames.length; i++) {
+        const lastNameToCheck = sortedLastNames[i];
+        
+        if (lastNameToCheck === surnameP) {
+                positionOfMyLastName = i;
+        }
 }
+
+console.log("your name is in the position", positionOfMyLastName);
+
 
 // Other solution?
 //const namePosition = namesList.indexOf(surnameP); 
@@ -27,7 +33,9 @@ for (let i = 0; i < namesList.length; i++) {
 
 //- Have an output that Uppercase's all names
 
-for (let i = 0; i < namesList.length; i++) {
+for (let i = 0; i < sortedLastNames.length; i++) {
+        const sortedNames = sortedLastNames[1];
+
     const upperCaseNames = namesList[i].toUpperCase();
         console.log("upperCaseLastNames:  " + upperCaseNames );
 }
@@ -37,5 +45,4 @@ for (let i = 0; i < namesList.length; i++) {
  which in its turn will go inside another array to group it all together.
 Output the result into the console.*/
 
-console.log(alphabeticalNames);
-console.log(upperCaseNames);
+
